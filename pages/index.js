@@ -8,6 +8,7 @@ import styles from '../styles/Home.module.scss';
 
 import skills from "../content/skills.js";
 import Skill from '../components/skill';
+import ContactForm from '../components/contact-form';
 
 // const typography = new Typography(sternGroveTheme);
 const theme = createMuiTheme({
@@ -36,14 +37,14 @@ export default function Home() {
         <Paper>
           <Box p={2} my={2}>
             <h1>We are Red Flannel</h1>
-            <Typography variant="subtitle" gutterBottom>A warmer approach to software development</Typography>
+            <Typography variant="subtitle1" gutterBottom>A warmer approach to software development</Typography>
           </Box>
         </Paper>
         <Box>
           <h2>Our skills &amp; interests</h2>
           <Grid container spacing={2}>
-            {skills.map(skill => (
-              <Skill {...skill} />
+            {skills.map((skill, i) => (
+              <Skill key={i} {...skill} />
             ))}
           </Grid>
         </Box>
@@ -59,6 +60,9 @@ export default function Home() {
               <Typography paragraph>Red Flannel is located in Seattle, Washington, but I have many years of experience working remotely for clients all over the world.</Typography>
             </Grid>
           </Grid>
+        </Box>
+        <Box>
+          <ContactForm />
         </Box>
       </Container>
     </ThemeProvider>

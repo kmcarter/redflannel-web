@@ -12,7 +12,7 @@ const Skill = props => {
     //     </CardContent>
     //   </Card>
     // </Grid>
-    <Grid item m>
+    <Grid item md>
       <Card>
         <CardContent>
           {props.name}
