@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography, Button } from '@material-ui/core';
+import { Grid, TextField, Typography, Box, Button } from '@material-ui/core';
 import AWS from 'aws-sdk';
 
 export default class ContactForm extends React.Component {
@@ -75,52 +75,20 @@ export default class ContactForm extends React.Component {
 
   render() {
     return (
-      <>
-        <Typography variant="h2" gutterBottom>
-          Get in touch
-        </Typography>
-        <Typography paragraph>Tell me a little about your dreams and goals and I will reach out to schedule a free consultation.</Typography>
-        <form onSubmit={this.handleSubmit}>
-          <Grid container spacing={3}>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="name"
-                name="name"
-                label="Name"
-                fullWidth
-                autoComplete="name"
-              />
-            </Grid>
-            <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="email"
-                name="email"
-                label="Email address"
-                fullWidth
-                autoComplete="email"
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                id="projdesc"
-                name="projdesc"
-                label="Describe your project"
-                fullWidth
-                multiline
-                autoComplete="off"
-              />
-            </Grid>
-            <Grid item container xs={12}>
-              <Button variant="contained" color="primary" type="submit" fullWidth>
-                Send
-              </Button>
-            </Grid>
+      <form onSubmit={this.handleSubmit}>
+        <Grid container spacing={3}>
+          <Grid item xs={12} sm={6}>
+            <TextField required id="name" name="name" label="Name" fullWidth autoComplete="name" variant="outlined" />
+            <TextField required id="email" name="email" label="Email address" fullWidth autoComplete="email" variant="outlined" margin="normal" />
           </Grid>
-        </form>
-      </>
+          <Grid item xs={12} sm={6}>
+            <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth multiline rows={4} autoComplete="off" variant="outlined" />
+          </Grid>
+          <Grid item component={Box} xs={12} textAlign="right">
+            <Button variant="contained" color="primary" type="submit">Send</Button>
+          </Grid>
+        </Grid>
+      </form>
     );
   }
 }

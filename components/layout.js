@@ -1,4 +1,11 @@
-import Typography from 'typography'
-import funstonTheme from 'typography-theme-funston'
+import Container from "@material-ui/core/Container";
+import Footer from "./footer";
 
-const typography = new Typography(funstonTheme)
+export default function Layout(props) {
+  return (
+    <Container>
+      {props.children}
+      <Footer />
+    </Container>
+  )
+}
