@@ -8,7 +8,8 @@ export default function Header(props) {
   const pt = props.alt ? 15 : 20;
   const pb = props.alt ? 10 : 15;
 
-  let icon = <FontAwesomeIcon icon={faPastafarianism} size="2x" />;
+  // let icon = <FontAwesomeIcon icon={faPastafarianism} size="2x" />;
+  let icon = <img src="/RF_logo_master-01.png" alt="Red Flannel Web Services LLC" />
   if (props.alt) {
     icon = <Link href="/" title="Back to homepage" color="textSecondary"><FontAwesomeIcon icon={faArrowCircleLeft} size="2x" /></Link>;
   }
@@ -18,7 +19,7 @@ export default function Header(props) {
       <Box className="logo">
         {icon}
       </Box>
-      <Typography component="h1" variant="h1" color="textSecondary">{props.h1}</Typography>
+      {/* <Typography component="h1" variant="h1" color="textSecondary">{props.h1}</Typography> */}
       {props.children &&
         <Typography component="p" variant="subtitle1">{props.children}</Typography>
       }
