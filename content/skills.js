@@ -1,7 +1,8 @@
 import Typography from '@material-ui/core/Typography';
-import Link from '@material-ui/core/Link';
-import { faScroll, faCode, faGem, faTerminal, faCreditCard, faLowVision, faVial, faDatabase } from '@fortawesome/free-solid-svg-icons';
+import { faGem, faTerminal, faCreditCard, faLowVision, faVial, faDatabase } from '@fortawesome/free-solid-svg-icons';
 import { faPython, faMicrosoft, faShopify, faReact, faAws, faHtml5, faModx, faWordpress } from '@fortawesome/free-brands-svg-icons';
+
+import Link from "../components/link";
 
 const skills = [{
   title: "Languages & frameworks",

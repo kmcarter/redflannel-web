@@ -1,5 +1,6 @@
-import { Box, Grid, Typography, Link } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 
+import Link from "../components/link";
 import Section from "../components/section";
 import SectionHeader from "../components/section-header";
 

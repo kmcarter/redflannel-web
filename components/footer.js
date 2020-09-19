@@ -1,6 +1,8 @@
-import { Typography, Grid, Box, Link } from "@material-ui/core";
+import { Typography, Grid, Box } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+
+import Link from "./link";
 
 export default function Footer(props) {
   const year = new Date().getFullYear();

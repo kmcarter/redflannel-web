@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }) {
     },
     props: {
       MuiLink: {
-        underline: "none"
+        underline: "always"
       }
     },
     overrides: {

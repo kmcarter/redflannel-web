@@ -1,6 +1,7 @@
 import Head from 'next/head';
-import { Paper, Typography, Link } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
 
+import Link from "../components/link";
 import Header from "../components/header";
 import Section from "../components/section";
 

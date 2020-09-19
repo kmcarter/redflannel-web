@@ -1,6 +1,8 @@
-import { Box, Typography, Link } from '@material-ui/core';
+import { Box, Typography } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
+
+import Link from "./link";
 
 export default function Header(props) {
   const pt = props.alt ? 15 : 20;
@@ -20,7 +22,7 @@ export default function Header(props) {
       {props.alt &&
         <>
           <Box className="logo">
-            <Link href="/" title="Back to homepage" color="textSecondary"><FontAwesomeIcon icon={faArrowCircleLeft} size="2x" /></Link>
+            <Link href="/" title="Back to homepage" color="textSecondary" underline="never"><FontAwesomeIcon icon={faArrowCircleLeft} size="2x" /></Link>
           </Box>
           <Typography component="h1" variant="h1" color="textSecondary">{props.h1}</Typography>
         </>
