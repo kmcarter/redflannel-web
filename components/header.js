@@ -22,7 +22,7 @@ export default function Header(props) {
       {props.alt &&
         <>
           <Box className="logo">
-            <Link href="/" title="Back to homepage" color="textSecondary" underline="never"><FontAwesomeIcon icon={faArrowCircleLeft} size="2x" /></Link>
+            <Link href="/" title="Back to homepage" color="textSecondary" underline="none"><FontAwesomeIcon icon={faArrowCircleLeft} size="2x" /></Link>
           </Box>
           <Typography component="h1" variant="h1" color="textSecondary">{props.h1}</Typography>
         </>
