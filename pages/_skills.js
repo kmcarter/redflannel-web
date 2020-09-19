@@ -1,4 +1,4 @@
-import { Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Section from "../components/section";
@@ -17,7 +17,7 @@ export default function SkillsInterests() {
             <Typography component="ul" className="alt">
               {category.skills.map((skill, j) => (
                 <Typography component="li" key={j}>
-                  <FontAwesomeIcon icon={skill.icon} fixedWidth />
+                  <FontAwesomeIcon icon={skill.icon} className={`icon style${i+j+1}`} fixedWidth />
                   {" "}{skill.name}
                 </Typography>
               ))}
@@ -25,6 +25,9 @@ export default function SkillsInterests() {
           </Grid>
         ))}
       </Grid>
+      <Box mt={3}>
+        <Typography paragraph><em>Have a requirement you don't see here?</em> Just ask &ndash; I may have left it off the list for brevity, but I'm also a quick learner!</Typography>
+      </Box>
     </Section>
   )
 }

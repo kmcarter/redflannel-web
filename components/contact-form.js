@@ -1,4 +1,6 @@
-import { Grid, TextField, Typography, Box, Button } from '@material-ui/core';
+import { Grid, TextField, Box, Button } from '@material-ui/core';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import AWS from 'aws-sdk';
 
 export default class ContactForm extends React.Component {
@@ -82,10 +84,10 @@ export default class ContactForm extends React.Component {
             <TextField required id="email" name="email" label="Email address" fullWidth autoComplete="email" variant="outlined" margin="normal" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth multiline rows={4} autoComplete="off" variant="outlined" />
+            <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth autoComplete="off" variant="outlined" multiline rows={4} />
           </Grid>
           <Grid item component={Box} xs={12} textAlign="right">
-            <Button variant="contained" color="primary" type="submit">Send</Button>
+            <Button variant="contained" color="secondary" type="submit" size="large" endIcon={<FontAwesomeIcon icon={faPaperPlane} />}>Send</Button>
           </Grid>
         </Grid>
       </form>

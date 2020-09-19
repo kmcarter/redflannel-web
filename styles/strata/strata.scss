@@ -13,8 +13,6 @@
 // Mixins.
 @mixin color($p) {
     @include color-box($p);
-    @include color-button($p);
-    // @include color-form($p);
     @include color-icon($p);
     @include color-list($p);
     @include color-section($p);
@@ -24,10 +22,9 @@
 
 // Base.
 @import 'base/page';
+@import 'base/typography';
 // Component.
 @import 'components/box';
-@import 'components/button';
-// @import 'components/form';
 @import 'components/icon';
 @import 'components/image';
 @import 'components/list';

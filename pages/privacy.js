@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { Paper, Box, Typography, Link } from '@material-ui/core';
+import { Paper, Typography } from '@material-ui/core';
+
 import Header from "../components/header";
 import Section from "../components/section";
 
@@ -19,8 +20,7 @@ export default function PrivacyPage() {
           <Typography paragraph>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</Typography>
           <Typography paragraph>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</Typography>
           <Typography paragraph>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</Typography>
-          <Typography paragraph>This policy is effective as of 1 June 2020.</Typography>
-          <Typography paragraph variant="caption">Privacy Policy created with <Link href="https://getterms.io/" target="_blank">GetTerms</Link>.</Typography>
+          <Typography paragraph variant="caption">This policy is effective as of June 1, 2020.</Typography>
         </Section>
       </Paper>
     </>

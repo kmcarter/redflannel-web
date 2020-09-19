@@ -10,7 +10,7 @@ export default function Footer(props) {
         <Grid item xs={12} lg={6} component="section">
           <Typography component="h2" variant="h4" color="textSecondary" gutterBottom>The fineprint</Typography>
           <Typography paragraph>
-            Want to see a code sample? Interested in how this site was built? We have an <Link href="/imprint" color="textSecondary">imprint</Link>.
+            Want to see a code sample? Interested in how this site was built? Check out the <Link href="/imprint" color="textSecondary">imprint</Link>.
           </Typography>
         </Grid>
         <Grid item xs={12} lg={6} component="section">

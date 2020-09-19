@@ -68,6 +68,14 @@ const skills = [{
       icon: faTerminal,
     },
     {
+      name: "Database design",
+      icon: faDatabase,
+    },
+    {
+      name: "Automated testing",
+      icon: faVial,
+    },
+    {
       name: "PCI Compliance",
       icon: faCreditCard,
     },
@@ -75,14 +83,6 @@ const skills = [{
       name: "Web accessibility (a11y)",
       icon: faLowVision,
     },
-    {
-      name: "Automated testing",
-      icon: faVial,
-    },
-    {
-      name: "Database design",
-      icon: faDatabase,
-    }
   ]
 }
 ];

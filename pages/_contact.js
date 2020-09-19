@@ -1,4 +1,4 @@
-import Typography from "@material-ui/core/Typography";
+import { Typography } from "@material-ui/core";
 
 import Section from "../components/section";
 import SectionHeader from "../components/section-header";

@@ -2,11 +2,13 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Head from 'next/head';
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { config } from '@fortawesome/fontawesome-svg-core'
+
 import Layout from "../components/layout";
 
-import '../styles/globals.scss'
-import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css' // Import the CSS
+import '../styles/globals.scss'
+
 config.autoAddCss = false // Tell Font Awesome to skip adding the CSS automatically since it's being imported above
 
 function MyApp({ Component, pageProps }) {
@@ -18,11 +20,11 @@ function MyApp({ Component, pageProps }) {
         secondary: "#fff"
       },
       primary: {
-        main: '#4f7689',
+        main: '#c4453b',
         contrastText: "rgba(255, 255, 255, 0.65)"
       },
       secondary: {
-        main: '#c4453b'
+        main: '#4f7689',
       },
     },
     typography: {
@@ -58,6 +60,18 @@ function MyApp({ Component, pageProps }) {
         fontSize: "2rem"
       },
     },
+    props: {
+      MuiLink: {
+        underline: "none"
+      }
+    },
+    overrides: {
+      MuiFormLabel: {
+        root: {
+          color: "#636363"
+        }
+      }
+    }
   });
 
   React.useEffect(() => {

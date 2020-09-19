@@ -37,13 +37,16 @@
         font-size: 2rem;
         padding: 0.5rem;
     }
-    &.style1 {
+    &.style1,
+    &.style6 {
         color: _palette(accent1);
     }
-    &.style2 {
+    &.style2,
+    &.style7 {
         color: _palette(accent2);
     }
-    &.style3 {
+    &.style3,
+    &.style8 {
         color: _palette(accent3);
     }
     &.style4 {

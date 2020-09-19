@@ -1,8 +1,8 @@
 import Head from 'next/head';
-import { Paper, Box, Typography, Link } from '@material-ui/core';
+import { Paper, Typography, Link } from '@material-ui/core';
+
 import Header from "../components/header";
 import Section from "../components/section";
-import SectionHeader from "../components/section-header";
 
 export default function PrivacyPage() {
   return (
@@ -25,6 +25,7 @@ export default function PrivacyPage() {
             <Typography component="li">Visual Studio Code</Typography>
             <Typography component="li">Amazon Web Services, including: S3, SES, CloudFront</Typography>
             <Typography component="li">Google RECAPTCHA (v3)</Typography>
+            <Typography component="li">Privacy Policy created with <Link href="https://getterms.io/" target="_blank">GetTerms</Link>.</Typography>
             </Typography>
           <Typography paragraph>Additionally, the source code is <Link href="">open source and published on GitHub</Link>, where you can find additional notes about my design and coding decisions.</Typography>
         </Section>
