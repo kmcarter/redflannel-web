@@ -25,7 +25,7 @@ export default function PrivacyPage() {
             <Typography component="li"><Link href="https://fontawesome.com/" target="_blank">Font Awesome</Link> icons</Typography>
             <Typography component="li"><Link href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</Link></Typography>
             <Typography component="li"><Link href="https://aws.amazon.com/" target="_blank">Amazon Web Services</Link>, including: SES</Typography>
-            <Typography component="li"><Link href="https://developers.google.com/recaptcha" target="_blank">Google RECAPTCHA</Link> (v3)</Typography>
+            <Typography component="li"><Link href="https://www.google.com/recaptcha/" target="_blank">Google RECAPTCHA</Link> (v3)</Typography>
             <Typography component="li">Privacy Policy created with <Link href="https://getterms.io/" target="_blank">GetTerms</Link>.</Typography>
             </Typography>
           <Typography paragraph>Additionally, the source code is <Link href="">open source and published on GitHub</Link>, where you can find additional notes about my design and coding decisions.</Typography>

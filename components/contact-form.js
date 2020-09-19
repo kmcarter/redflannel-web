@@ -1,33 +1,31 @@
-import { Grid, TextField, Box, Button } from '@material-ui/core';
+import { Grid, Input, TextField, Box, Button } from '@material-ui/core';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import AWS from 'aws-sdk';
+import { GoogleReCaptcha } from "react-google-recaptcha-v3";
 
 export default class ContactForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {token: null};
-  }
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.state = {token: ""};
 
-  async handleSubmit(e) {
-    e.preventDefault();
-    console.log(e);
-
-    const token = await this.props.googleReCaptchaProps.executeRecaptcha('homepage');
-
-    this.setState({token: token});
-    console.log(token);
-    if (!token) {
-      return;
-    }
-
-    const form = new FormData(e.target);
     AWS.config.update({
       apiVersion: '2010-12-01',
       region: 'us-west-2',
       accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
       secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(e);
+
+    const form = new FormData(e.target);
+    if (!form.get("recaptcha-token")) {
+      return;
+    }
 
     let email = `<html><body><dl><dt>Name</dt><dd>${form.get("name")}</dd><dt>Email</dt><dd>${form.get("email")}</dd><dt>Project description</dt><dd>${form.get("projdesc")}</dd></dl></body></html>`;
     var params = {
@@ -71,10 +69,6 @@ export default class ContactForm extends React.Component {
       });
   }
 
-  async validateRecaptcha() {
-    return result;
-  }
-
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -87,6 +81,8 @@ export default class ContactForm extends React.Component {
             <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth autoComplete="off" variant="outlined" color="secondary" multiline rows={4} />
           </Grid>
           <Grid item component={Box} xs={12} textAlign="right">
+            <GoogleReCaptcha onVerify={(token) => this.setState({token})} />
+            <Input type="hidden" name="recaptcha-token" value={this.state.token} />
             <Button variant="contained" color="primary" type="submit" size="large" endIcon={<FontAwesomeIcon icon={faPaperPlane} />}>Send</Button>
           </Grid>
         </Grid>

@@ -84,7 +84,7 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBIC_GOOGLE_RECAPTCHA_SITE_KEY}>
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_GOOGLE_RECAPTCHA_SITE_KEY}>
       <Head>
         <title>Red Flannel Web Services</title>
         <link rel="icon" href="/favicon.ico" />
