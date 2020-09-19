@@ -21,10 +21,11 @@ function MyApp({ Component, pageProps }) {
       },
       primary: {
         main: '#c4453b',
-        contrastText: "rgba(255, 255, 255, 0.65)"
+        contrastText: "#fff"
       },
       secondary: {
         main: '#4f7689',
+        contrastText: "rgba(255, 255, 255, 0.65)"
       },
     },
     typography: {

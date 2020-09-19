@@ -80,14 +80,14 @@ export default class ContactForm extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <TextField required id="name" name="name" label="Name" fullWidth autoComplete="name" variant="outlined" />
-            <TextField required id="email" name="email" label="Email address" fullWidth autoComplete="email" variant="outlined" margin="normal" />
+            <TextField required id="name" name="name" label="Name" fullWidth autoComplete="name" variant="outlined" color="secondary" />
+            <TextField required id="email" name="email" label="Email address" fullWidth autoComplete="email" variant="outlined" color="secondary" margin="normal" />
           </Grid>
           <Grid item xs={12} sm={6}>
-            <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth autoComplete="off" variant="outlined" multiline rows={4} />
+            <TextField required id="projdesc" name="projdesc" label="Describe your project" fullWidth autoComplete="off" variant="outlined" color="secondary" multiline rows={4} />
           </Grid>
           <Grid item component={Box} xs={12} textAlign="right">
-            <Button variant="contained" color="secondary" type="submit" size="large" endIcon={<FontAwesomeIcon icon={faPaperPlane} />}>Send</Button>
+            <Button variant="contained" color="primary" type="submit" size="large" endIcon={<FontAwesomeIcon icon={faPaperPlane} />}>Send</Button>
           </Grid>
         </Grid>
       </form>
