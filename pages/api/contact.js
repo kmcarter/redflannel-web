@@ -13,9 +13,9 @@ export default async (req, res) => {
 
     AWS.config.update({
       apiVersion: '2010-12-01',
-      region: process.env.AWS_REGION,
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+      region: process.env.RF_AWS_SES_REGION,
+      accessKeyId: process.env.RF_AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.RF_AWS_SECRET_ACCESS_KEY
     });
 
     //TODO: put this somewhere better, either SES templated email, or in its own file
