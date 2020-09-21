@@ -1,126 +1,102 @@
-import { Grid, TextField, Typography, Button } from '@material-ui/core';
-import AWS from 'aws-sdk';
+import { useReducer } from 'react';
+import { Grid, TextField, Box, Button, Link, Snackbar } from '@material-ui/core';
+import MuiAlert from '@material-ui/lab/Alert';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPaperPlane, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
-export default class ContactForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {token: null};
-  }
+export default function ContactForm(props) {
+  const { executeRecaptcha } = useGoogleReCaptcha();
+  const [state, setState] = useReducer(
+    (state, newState) => ({...state, ...newState}),
+    {
+      name: "",
+      email: "",
+      projDesc: "",
+      token: "",
+      open: false,
+      success: false,
+      message: null,
+      sending: false
+    }
+  );
 
-  async handleSubmit(e) {
+  const handleSubmit = async (e) => {
+    setState({sending: true});
     e.preventDefault();
-    console.log(e);
 
-    const token = await this.props.googleReCaptchaProps.executeRecaptcha('homepage');
-
-    this.setState({token: token});
-    console.log(token);
-    if (!token) {
+    const token = await executeRecaptcha("contact");
+    if (token === "") {
       return;
     }
 
-    const form = new FormData(e.target);
-    AWS.config.update({
-      apiVersion: '2010-12-01',
-      region: 'us-west-2',
-      accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_ACCESS_KEY
-    });
-
-    let email = `<html><body><dl><dt>Name</dt><dd>${form.get("name")}</dd><dt>Email</dt><dd>${form.get("email")}</dd><dt>Project description</dt><dd>${form.get("projdesc")}</dd></dl></body></html>`;
-    var params = {
-      Destination: { /* required */
-        ToAddresses: [
-          'kelly@redflannel.co',
-        ]
+    fetch("/api/contact", {
+      method: "post",
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
       },
-      Message: { /* required */
-        Body: { /* required */
-          Html: {
-           Charset: "UTF-8",
-           Data: email
-          },
-          Text: {
-           Charset: "UTF-8",
-           Data: email
-          }
-         },
-         Subject: {
-          Charset: 'UTF-8',
-          Data: 'Test email'
-         }
-        },
-      Source: "admin@redflannel.co", /* required */
-      ReplyToAddresses: [
-        form.get("email")
-      ],
-    };
-
-    // Create the promise and SES service object
-    var sendPromise = new AWS.SES().sendEmail(params).promise();
-
-    // Handle promise's fulfilled/rejected states
-    sendPromise.then(
-      function(data) {
-        console.log(data.MessageId);
-      }).catch(
-        function(err) {
-        console.error(err, err.stack);
-      });
+      body: JSON.stringify({
+        name: state.name,
+        email: state.email,
+        projDesc: state.projDesc,
+        token: token
+      })
+    }).then((res) => {
+      return res.json();
+    }).then(content => {
+      if (content.success) {
+        console.log("Email sent. Message ID:", content.sesMessageId);
+        setState({sending: false, open: true, success: true, message: "Thanks for reaching out! You'll hear from me soon.", name: "", email: "", projDesc: ""});
+      } else {
+        throw new Error(content.message);
+      }
+    }).catch(error => {
+      setState({sending: false, open: true, success: false, message: "Your message could not be sent, but an error has been logged."});
+      console.error(error);
+    });
   }
 
-  async validateRecaptcha() {
-    return result;
-  }
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
 
-  render() {
+    setState({open: false});
+  };
+
     return (
       <>
-        <Typography variant="h2" gutterBottom>
-          Get in touch
-        </Typography>
-        <Typography paragraph>Tell me a little about your dreams and goals and I will reach out to schedule a free consultation.</Typography>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="name"
-                name="name"
-                label="Name"
-                fullWidth
-                autoComplete="name"
-              />
+              <TextField required id="name" name="name" label="Name" value={state.name} fullWidth
+                autoComplete="name" variant="outlined" color="secondary" onChange={(e) => setState({name: e.target.value})} />
+              <TextField required id="email" name="email" label="Email address" value={state.email} fullWidth
+                autoComplete="email" variant="outlined" color="secondary" onChange={(e) => setState({email: e.target.value})}
+                margin="normal" type="email" />
             </Grid>
             <Grid item xs={12} sm={6}>
-              <TextField
-                required
-                id="email"
-                name="email"
-                label="Email address"
-                fullWidth
-                autoComplete="email"
-              />
+              <TextField required id="projdesc" name="projdesc" label="Describe your project" value={state.projDesc} fullWidth
+                autoComplete="off" variant="outlined" color="secondary" onChange={(e) => setState({projDesc: e.target.value})}
+                multiline rows={4} />
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                required
-                id="projdesc"
-                name="projdesc"
-                label="Describe your project"
-                fullWidth
-                multiline
-                autoComplete="off"
-              />
-            </Grid>
-            <Grid item container xs={12}>
-              <Button variant="contained" color="primary" type="submit" fullWidth>
-                Send
+            <Grid item component={Box} xs={12} textAlign="right">
+              <Button variant="contained" color="primary" type="submit" size="large" disabled={state.sending}
+                endIcon={<FontAwesomeIcon icon={state.sending ? faSyncAlt : faPaperPlane} />} spin={state.sending.toString()}>
+                  {state.sending ? "Sending" : "Send"}
               </Button>
             </Grid>
           </Grid>
         </form>
+        <Snackbar anchorOrigin={{vertical: "top", horizontal: "center"}} open={state.open} autoHideDuration={4000} onClose={handleClose}>
+          <MuiAlert elevation={6} variant="filled" severity={state.success ? "success" : "error"}>
+            {state.message}
+            {!state.success &&
+              <><Link href="mailto:kelly@redflannel.co?subject=Your contact form errored" target="_blank" color="textSecondary">Send me an email</Link>{" "}instead.</>
+            }
+          </MuiAlert>
+        </Snackbar>
       </>
     );
-  }
 }

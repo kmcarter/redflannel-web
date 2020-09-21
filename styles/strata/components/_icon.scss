@@ -1,0 +1,81 @@
+///
+/// Stellar by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Icon */
+
+.icon {
+    @include icon;
+    @include vendor('transition', ( 'background-color #{_duration(transition)} ease-in-out', 'color #{_duration(transition)} ease-in-out'));
+    border-bottom: none;
+    >.label {
+        display: none;
+    }
+    &:before {
+        line-height: solid;
+    }
+    &.solid {
+        &:before {
+            font-weight: 900;
+        }
+    }
+    &.brands {
+        &:before {
+            font-family: 'Font Awesome 5 Brands';
+        }
+    }
+    &.major {
+        border: solid 1px;
+        border-radius: 100%;
+        cursor: default;
+    }
+    &.alt {
+        border: solid 1px;
+        border-radius: 100%;
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+    &.style1,
+    &.style6 {
+        color: _palette(accent1);
+    }
+    &.style2,
+    &.style7 {
+        color: _palette(accent2);
+    }
+    &.style3,
+    &.style8 {
+        color: _palette(accent3);
+    }
+    &.style4 {
+        color: _palette(accent4);
+    }
+    &.style5 {
+        color: _palette(accent5);
+    }
+}
+
+@mixin color-icon($p: null) {
+    .icon {
+        &.major {
+            border-color: _palette($p, border);
+            &:before {
+                border-color: _palette($p, border);
+            }
+        }
+        &.alt {
+            border-color: _palette($p, border);
+            color: _palette($p, fg-bold);
+            &:hover {
+                background-color: _palette($p, border-bg);
+            }
+            &:active {
+                background-color: _palette($p, border2-bg);
+            }
+        }
+    }
+}
+
+@include color-icon;
