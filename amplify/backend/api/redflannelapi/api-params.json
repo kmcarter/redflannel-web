@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/api/contact",
+            "lambdaFunction": "rfcontactapi",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/api/contact"
+        }
+    ],
+    "resourceName": "redflannelapi",
+    "apiName": "redflannelapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "rfcontactapi"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-redflannelweb-dev-203447-authRole",
+        "unAuthRoleName": "amplify-redflannelweb-dev-203447-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "rfcontactapi",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

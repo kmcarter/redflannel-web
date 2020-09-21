@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-redflannelweb-dev-203447-authRole",
+      "UnauthRoleArn": "arn:aws:iam::928655982265:role/amplify-redflannelweb-dev-203447-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::928655982265:role/amplify-redflannelweb-dev-203447-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-redflannelweb-dev-203447-deployment",
+      "UnauthRoleName": "amplify-redflannelweb-dev-203447-unauthRole",
+      "StackName": "amplify-redflannelweb-dev-203447",
+      "StackId": "arn:aws:cloudformation:us-west-2:928655982265:stack/amplify-redflannelweb-dev-203447/8ef648b0-fbbc-11ea-8082-0aa8f5f15d4c",
+      "AmplifyAppId": "d2954mxh0tdmyy"
+    }
+  }
+}
