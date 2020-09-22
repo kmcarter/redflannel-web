@@ -93,7 +93,7 @@ export default function ContactForm(props) {
           <MuiAlert elevation={6} variant="filled" severity={state.success ? "success" : "error"}>
             {state.message}
             {!state.success &&
-              <><Link href="mailto:kelly@redflannel.co?subject=Your contact form errored" target="_blank" color="textSecondary">Send me an email</Link>{" "}instead.</>
+              <><Link href="mailto:kelly@redflannel.co?subject=Your contact form errored" target="_blank" rel="noopener" color="textSecondary">Send me an email</Link>{" "}instead.</>
             }
           </MuiAlert>
         </Snackbar>

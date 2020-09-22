@@ -48,7 +48,7 @@ const skills = [{
     },
     {
       name: "Shopify",
-      description: <Typography paragraph>I focus on theme and plugin customization and coding for <Link href="https://www.shopify.com/?ref=rainworks" target="_blank">Shopify</Link>, my ecommerce solution of choice. I'll help you get set up too.</Typography>,
+      description: <Typography paragraph>I focus on theme and plugin customization and coding for <Link href="https://www.shopify.com/?ref=rainworks" target="_blank" rel="noopener">Shopify</Link>, my ecommerce solution of choice. I'll help you get set up too.</Typography>,
       icon: faShopify,
     },
     {
