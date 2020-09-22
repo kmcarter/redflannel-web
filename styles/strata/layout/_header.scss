@@ -14,31 +14,9 @@
         >* {
             @include vendor('transition', 'opacity 3s ease');
             @include vendor('transition-delay', '0.5s');
-            // opacity: 1;
         }
         &.interior h1 {
             font-size: 3.5rem;
-        }
-        .logo {
-            @include vendor('transition', ( 'opacity 1.25s ease', 'transform 0.5s ease'));
-            @include vendor('transition-delay', '0s');
-            display: block;
-            margin: 0 0 1.5rem 0;
-            img {
-                display: block;
-                margin: 0 auto;
-                max-width: 60%;
-            }
-        }
-    }
-    body.is-preload & {
-        &.alt {
-            >* {
-                opacity: 0;
-            }
-            .logo {
-                @include vendor('transform', 'scale(0.8) rotate(-30deg)');
-            }
         }
     }
 }

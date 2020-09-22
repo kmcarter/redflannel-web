@@ -14,12 +14,12 @@
         content: " ";
         position: absolute;
         z-index: -1;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
+        top: -18px;
+        left: -18px;
+        right: -18px;
+        bottom: -18px;
         border-radius: 10px;
-        border: 5px dotted #efc368;
+        border: 4px dotted #efc368;
     }
     >.main {
         @include padding(5em, 5em);
