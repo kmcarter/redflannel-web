@@ -1,17 +1,17 @@
 {
-  "projectName": "redflannelweb",
-  "version": "3.0",
-  "frontend": "javascript",
-  "javascript": {
-    "framework": "react",
-    "config": {
-      "SourceDir": "",
-      "DistributionDir": ".next",
-      "BuildCommand": "npm.cmd run-script build",
-      "StartCommand": "npm.cmd run-script start"
-    }
-  },
-  "providers": [
-    "awscloudformation"
-  ]
+    "projectName": "redflannelweb",
+    "version": "3.0",
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "react",
+        "config": {
+            "SourceDir": "src",
+            "DistributionDir": "out",
+            "BuildCommand": "npm.cmd run-script export",
+            "StartCommand": "npm.cmd run-script start"
+        }
+    },
+    "providers": [
+        "awscloudformation"
+    ]
 }
