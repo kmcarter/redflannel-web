@@ -8,6 +8,7 @@ import Header from "../components/header";
 import Services from "./_services";
 import About from "./_about";
 import SkillsInterests from "./_skills";
+import Testimonials from "./_testimonials";
 import Contact from "./_contact";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Services />
         <About />
         <SkillsInterests />
+        <Testimonials />
         <Contact />
         {/* <Section special>
           <SectionHeader>Skills &amp; interests</SectionHeader>

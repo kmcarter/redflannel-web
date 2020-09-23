@@ -71,6 +71,17 @@ function MyApp({ Component, pageProps }) {
         root: {
           color: "#636363"
         }
+      },
+      MuiAvatar: {
+        root: {
+          border: "3px dotted #dddddd"
+        },
+        circle: {
+          borderRadius: "100%",
+        },
+        img: {
+          borderRadius: "100%"
+        }
       }
     }
   });
