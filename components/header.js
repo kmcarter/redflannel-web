@@ -1,26 +1,46 @@
 import { Box, Typography, useMediaQuery } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Link from "./link";
 
-export default function Header(props) {
-  // TODO: This is hokey, but will do for now.
-  const theme = useTheme();
-  const isLgOrUp = useMediaQuery(theme.breakpoints.up('lg'));
-  const isMedOrUp = useMediaQuery(theme.breakpoints.up('md'));
-  const isXSmallOrDown = useMediaQuery(theme.breakpoints.down('xs'));
-  const pt = props.alt ? 15 : (isMedOrUp ? 20 : 10);
-  const pb = props.alt ? 10 : (isMedOrUp ? 15 : 10);
-  const px = isLgOrUp ? 15 : (isXSmallOrDown ? 1 : 10);
+const useStyles = makeStyles((theme) => ({
+  alt: {
+    [theme.breakpoints.up("lg")]: {
+      paddingX: theme.spacing(15)
+    },
+    [theme.breakpoints.up("md")]: {
+      paddingX: theme.spacing(10),
+      paddingTop: theme.spacing(20),
+      paddingBottom: theme.spacing(15)
+    },
+    [theme.breakpoints.down("sm")]: {
+      paddingX: theme.spacing(1),
+      paddingTop: theme.spacing(10),
+      paddingBottom: theme.spacing(10)
+    }
+  },
+  interior: {
+    paddingTop: theme.spacing(15),
+    paddingBottom: theme.spacing(10)
+  },
+  logo: {
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      width: "60%"
+    }
+  }
+}));
 
+export default function Header(props) {
+  const classes = useStyles();
   return (
-    <Box id="header" component="header" color="primary.contrastText" className={"alt" + (props.alt ? " interior" : "")} px={px} pt={pt} pb={pb} textAlign="center">
+    <Box id="header" component="header" color="primary.contrastText" className={classes.alt + (props.alt ? classes.interior : "")} textAlign="center">
       {!props.alt &&
         <>
           <Typography component="h1" variant="h1" color="textSecondary">
-            <Box width={isMedOrUp ? "60%" : "100%"} className="logo image">
+            <Box className={classes.logo + " image"}>
               <img src="/RF_logo_master-01.png" alt={props.h1} />
             </Box>
           </Typography>
