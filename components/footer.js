@@ -9,27 +9,27 @@ export default function Footer(props) {
   return (
     <Box id="footer" component="footer" color="primary.contrastText" padding={12}>
       <Grid container spacing={10}>
-        <Grid item xs={12} lg={6} component="section">
+        <Grid item xs={12} md={6} component="section">
           <Typography component="h2" variant="h4" color="textSecondary" gutterBottom>The fineprint</Typography>
           <Typography paragraph>
             Want to see a code sample? Interested in how this site was built? Check out the <Link href="/imprint" color="textSecondary">imprint</Link>.
           </Typography>
         </Grid>
-        <Grid item xs={12} lg={6} component="section">
+        <Grid item xs={12} md={6} component="section">
           <Typography component="h2" variant="h4" color="textSecondary" gutterBottom>Find Kelly elsewhere</Typography>
           <Box py={2}>
             <Grid container spacing={2}>
-              <Grid item xs={2}>
+              <Grid item xs={3} sm={2}>
                 <Link href="https://www.linkedin.com/in/kellycarterit/" className="icon alt">
                   <FontAwesomeIcon icon={faLinkedinIn} fixedWidth />
                 </Link>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={3} sm={2}>
                 <Link href="https://github.com/kmcarter" className="icon alt">
                   <FontAwesomeIcon icon={faGithub} fixedWidth />
                 </Link>
               </Grid>
-              <Grid item xs={2}>
+              <Grid item xs={3} sm={2}>
                 <Link href="https://twitter.com/kellycodes" className="icon alt">
                   <FontAwesomeIcon icon={faTwitter} fixedWidth />
                 </Link>
