@@ -17,11 +17,12 @@ export default function Testimonials(props) {
   const classes = useStyles();
   return (
     <Section>
+      <a id="testimonials" aria-hidden="true" />
       <SectionHeader>High praise</SectionHeader>
       {testimonials.map((testimonial, i) => {
         return (
           <>
-            <Testimonial {...testimonial} />
+            <Testimonial {...testimonial} key={i} />
             {i < testimonials.length - 1 && <Divider className={classes.divider} />}
           </>
         );

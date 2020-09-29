@@ -7,6 +7,7 @@ import ContactForm from '../components/contact-form';
 export default function Contact() {
   return (
     <Section>
+      <a id="contact" aria-hidden="true" />
       <SectionHeader>Get in touch</SectionHeader>
       <Typography paragraph>Tell me a little about your dreams and goals and I will reach out to schedule a free consultation.</Typography>
       <ContactForm />

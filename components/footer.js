@@ -7,7 +7,7 @@ import Link from "./link";
 export default function Footer(props) {
   const year = new Date().getFullYear();
   return (
-    <Box id="footer" component="footer" color="primary.contrastText" padding={12}>
+    <Box id="footer" component="footer" color="secondary.contrastText" padding={12}>
       <Grid container spacing={10}>
         <Grid item xs={12} md={6} component="section">
           <Typography component="h2" variant="h4" color="textSecondary" gutterBottom>The fineprint</Typography>

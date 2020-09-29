@@ -9,6 +9,7 @@ import skills from "../content/skills.js";
 export default function SkillsInterests() {
   return (
     <Section>
+      <a id="skills" aria-hidden="true" />
       <SectionHeader>Skills &amp; interests</SectionHeader>
       <Grid container spacing={8} justify="space-between">
         {skills.map((category, i) => (

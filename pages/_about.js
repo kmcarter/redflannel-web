@@ -17,6 +17,7 @@ export default function About() {
   const classes = useStyles();
   return (
     <Section>
+      <a id="about" aria-hidden="true" />
       <SectionHeader>About Kelly</SectionHeader>
       <Grid container spacing={8} direction="row-reverse" alignItems="flex-start" className="spotlight">
         <Grid item xs={12} md={4}>

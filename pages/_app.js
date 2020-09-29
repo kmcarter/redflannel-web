@@ -69,7 +69,7 @@ function MyApp({ Component, pageProps }) {
     overrides: {
       MuiFormLabel: {
         root: {
-          color: "#636363"
+          color: "textPrimary"
         }
       },
       MuiAvatar: {
@@ -81,6 +81,24 @@ function MyApp({ Component, pageProps }) {
         },
         img: {
           borderRadius: "100%"
+        }
+      },
+      MuiBottomNavigation: {
+        root: {
+          backgroundColor: "inherit",
+          padding: "1rem"
+        }
+      },
+      MuiBottomNavigationAction: {
+        root: {
+          "&$selected": {
+            backgroundColor: "#fff"
+          },
+          maxWidth: '100%'
+        },
+        label: {
+          color: "#636363",
+          fontSize: "1rem"
         }
       }
     }

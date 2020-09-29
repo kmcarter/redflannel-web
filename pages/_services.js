@@ -8,6 +8,7 @@ import Blurb from '../components/blurb';
 export default function Services() {
   return (
     <Section special>
+      <a id="services" aria-hidden="true" />
       <SectionHeader>Services</SectionHeader>
       <Grid container spacing={4} justify="space-between">
         <Grid item xs={12} md={6} lg={3}>
