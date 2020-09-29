@@ -41,7 +41,7 @@ export default function Header(props) {
         <>
           <Typography component="h1" variant="h1" color="textSecondary">
             <Box className={classes.logo + " image"}>
-              <img src="/RF_logo_master-01.png" alt={props.h1} />
+              <img src="/RF_logo_master_1.png" alt={props.h1} />
             </Box>
           </Typography>
         </>
