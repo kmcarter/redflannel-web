@@ -42,7 +42,7 @@ export default function Footer(props) {
             <img src="/RF_logo_footer.png" alt="Red Flannel Web Services" />
           </Typography>
           <Typography paragraph variant="caption" className="copyright" align="center">
-            &copy; {year} &bull; <Link href="/privacy" color="textSecondary">Privacy Policy</Link>
+            &copy; {year} &bull; <Link href="/privacy" color="inherit">Privacy Policy</Link>
           </Typography>
         </Grid>
       </Grid>
