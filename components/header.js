@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Header(props) {
   const classes = useStyles();
   return (
-    <Box id="header" component="header" color="primary.contrastText" className={classes.alt + (props.alt ? classes.interior : "")} textAlign="center">
+    <Box id="header" component="header" color="primary.contrastText" className={classes.alt + (props.alt ? " " + classes.interior : "")} textAlign="center">
       {!props.alt &&
         <>
           <Typography component="h1" variant="h1" color="textSecondary">
