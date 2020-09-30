@@ -26,7 +26,7 @@ export default function PrivacyPage() {
             <Typography component="li"><Link href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</Link></Typography>
             <Typography component="li"><Link href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon Web Services</Link>, including: SES, Amplify</Typography>
             <Typography component="li"><Link href="https://www.google.com/recaptcha/" target="_blank" rel="noopener">Google RECAPTCHA</Link> (v3)</Typography>
-            <Typography component="li">Privacy Policy created with <Link href="https://getterms.io/" target="_blank" rel="noopener">GetTerms</Link>.</Typography>
+            <Typography component="li">Privacy Policy created with <Link href="https://getterms.io/" target="_blank" rel="noopener">GetTerms</Link></Typography>
             </Typography>
           <Typography paragraph>Additionally, the source code is <Link href="https://github.com/kmcarter/redflannel-web" target="_blank" rel="noopener">open source and published on GitHub</Link>, where you can find additional notes about my design and coding decisions. It is licensed under the <Link href="https://github.com/kmcarter/redflannel-web/blob/master/LICENSE" target="_blank" rel="noopener">Mozilla Public License, Version 2.0</Link>.</Typography>
         </Section>

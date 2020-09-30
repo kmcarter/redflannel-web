@@ -28,7 +28,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## About the design
 
-Material-UI and Stellar, the HTML5 template, are not compatible out of the box. For the most part, I attempted to strip out Stellar's layout and spacing styles and kept its typography and color palettes. In this way, Material-UI is responsible for the layout, but Stellar is responsible for the look-and-feel. Luckily, Stellar (and I believe most of HTML5Up's templates) come with a complete set of SASS stylesheets. I copied them all into the project, then began carefully eliminating styles I wouldn't need. This was a somewhat arduous process and required care, time, and SASS debugging. I'm sure there are some idiosyncracies that I've missed during this process.
+Material-UI and Stellar, the HTML5 template, are not compatible out of the box. For the most part, I attempted to strip out Stellar's layout and spacing styles and kept its typography and color palettes. In this way, Material-UI is responsible for the layout, but Stellar is responsible for the look-and-feel. Luckily, Stellar (and I believe most of HTML5Up's templates) come with a complete set of SASS stylesheets. I copied them all into the project, then began carefully eliminating styles I wouldn't need. This was a somewhat arduous process and required care, time, and SASS debugging. I'm sure there are some idiosyncracies that I've missed during this process. I chose to do it this way because I wanted some hands-on demo time with Material-UI since I am considering using it for another project.
 
 ## License
 
