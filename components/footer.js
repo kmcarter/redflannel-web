@@ -38,9 +38,11 @@ export default function Footer(props) {
           </Box>
         </Grid>
         <Grid item xs={12}>
-          <Typography paragraph className="copyright" align="center">Red Flannel Web Services LLC &copy; {year}</Typography>
+          <Typography paragraph className="copyright" align="center">
+            <img src="/RF_logo_footer.png" alt="Red Flannel Web Services" />
+          </Typography>
           <Typography paragraph variant="caption" className="copyright" align="center">
-            <Link href="/privacy" color="textSecondary">Privacy Policy</Link>
+            &copy; {year} &bull; <Link href="/privacy" color="textSecondary">Privacy Policy</Link>
           </Typography>
         </Grid>
       </Grid>
