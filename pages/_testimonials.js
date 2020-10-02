@@ -16,15 +16,14 @@ const useStyles = makeStyles((theme) => ({
 export default function Testimonials(props) {
   const classes = useStyles();
   return (
-    <Section>
-      <a id="testimonials" aria-hidden="true" />
+    <Section id="testimonials">
       <SectionHeader>High praise</SectionHeader>
       {testimonials.map((testimonial, i) => {
         return (
-          <>
-            <Testimonial {...testimonial} key={i} />
+          <React.Fragment key={i}>
+            <Testimonial {...testimonial} />
             {i < testimonials.length - 1 && <Divider className={classes.divider} />}
-          </>
+          </React.Fragment>
         );
       })}
     </Section>

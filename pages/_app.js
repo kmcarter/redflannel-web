@@ -86,7 +86,9 @@ function MyApp({ Component, pageProps }) {
       MuiBottomNavigation: {
         root: {
           backgroundColor: "inherit",
-          padding: "1rem"
+          padding: "1rem",
+          height: "inherit",
+          display: "block"
         }
       },
       MuiBottomNavigationAction: {
@@ -94,11 +96,20 @@ function MyApp({ Component, pageProps }) {
           "&$selected": {
             backgroundColor: "#fff"
           },
-          maxWidth: '100%'
+          maxWidth: "100%",
+          minWidth: 'inherit',
+          padding: "10px 20px",
+          margin: "0 10px"
         },
         label: {
           color: "#636363",
-          fontSize: "1rem"
+          fontSize: "1.1rem"
+        }
+      },
+      MuiTouchRipple: {
+        root: {
+          color: '#c4453b',
+          borderRadius: "4px"
         }
       }
     }

@@ -13,15 +13,14 @@
     border-top-right-radius: _size(border-radius-main);
     cursor: default;
     text-align: center;
-    ul {
+    .MuiToolbar-root {
         margin: 0;
         padding: 0;
         list-style: none;
-        li {
+        .MuiBottomNavigationAction-root {
             @include vendor('transition', ( 'margin #{_duration(transition)} ease'));
-            padding: 0;
             vertical-align: middle;
-            a .MuiBottomNavigationAction-wrapper {
+            a.MuiBottomNavigationAction-wrapper {
                 height: 2.85em;
                 padding: 0 1.25em;
                 border: 0;
