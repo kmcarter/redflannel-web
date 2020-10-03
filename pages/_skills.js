@@ -26,7 +26,7 @@ export default function SkillsInterests() {
         ))}
       </Grid>
       <Box mt={3}>
-        <Typography paragraph><em>Have a requirement you don't see here?</em> Just ask &ndash; I may have left it off the list for brevity, but I'm also a quick learner!</Typography>
+        <Typography paragraph><em>Have a requirement you don't see here?</em> Just ask &ndash; I may have left it off the list for brevity.</Typography>
       </Box>
     </Section>
   )

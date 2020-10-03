@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Red Flannel Web Services</title>
+        <title>Red Flannel Web Services | software development, websites, consulting</title>
       </Head>
       <Header h1="Red Flannel Web Services">A warmer approach to software development</Header>
       <Paper id="main">

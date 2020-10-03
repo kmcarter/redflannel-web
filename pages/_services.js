@@ -9,7 +9,7 @@ export default function Services() {
   return (
     <Section id="services" special>
       <SectionHeader>Services</SectionHeader>
-      <Grid container spacing={4} justify="space-between">
+      <Grid container spacing={6} justify="space-between">
         <Grid item xs={12} md={6} lg={3}>
           <Blurb idx={3} icon={faCode} name="Custom development">
             <Typography paragraph>From API integrations to custom themes, you can throw just about any type of project at me and I'll build it.</Typography>
@@ -22,7 +22,7 @@ export default function Services() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <Blurb idx={2} icon={faComments} name="Consulting">
-            <Typography paragraph>Troubleshooting, research, and answering that fundamental, perennial question: 'is it possible to...?'</Typography>
+            <Typography paragraph>Troubleshooting, research, design, and answering that fundamental, perennial question: "is it possible to...?"</Typography>
           </Blurb>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
