@@ -13,7 +13,7 @@ const testimonials = [
     company: "Mercom Communications",
     url: "https://www.mercomcapital.com/",
     image: "/wendy.jpg",
-    testimonial: "Kelly is a fantastic programmer with a sense of ownership. She doesn't look to others to solve problems, she is the solver. Have worked with her for quite a while and look forward to continuing with her."
+    testimonial: "Having worked with several other programmers, Kelly is the only one that gives me the confidence that projects are being done right. They are efficient, detailed, and knowledgeable. They have always been able to deliver what I ask for, even if what I ask for is simply an “idea.” Kelly also lets you know if there is a better approach. I cannot recommend them enough."
   }
 ];
 
