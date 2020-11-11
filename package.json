@@ -1,5 +1,6 @@
 {
     "name": "redflannel-web",
+    "repository": "github:kmcarter/redflannel-web",
     "version": "0.1.0",
     "private": true,
     "scripts": {
@@ -18,7 +19,6 @@
         "@fortawesome/react-fontawesome": "^0.1.11",
         "@material-ui/core": "^4.11.0",
         "@material-ui/lab": "^4.0.0-alpha.56",
-        "aws-sdk": "^2.751.0",
         "next": "9.5.3",
         "react": "16.13.1",
         "react-dom": "16.13.1",

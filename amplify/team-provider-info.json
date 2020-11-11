@@ -10,6 +10,11 @@
       "StackName": "amplify-redflannelweb-dev-203447",
       "StackId": "arn:aws:cloudformation:us-west-2:928655982265:stack/amplify-redflannelweb-dev-203447/8ef648b0-fbbc-11ea-8082-0aa8f5f15d4c",
       "AmplifyAppId": "d2954mxh0tdmyy"
+    },
+    "categories": {
+      "function": {
+        "rfcontactapi": {}
+      }
     }
   },
   "prod": {

@@ -1,13 +1,14 @@
-import AWS from 'aws-sdk';
+const AWS = require('aws-sdk');
+const fetch = require("node-fetch");
 
 const minimum_score = parseFloat(process.env.GOOGLE_RECAPTCHA_MINIMUM_SCORE);
 
-export default async (req, res) => {
+async function contact(req, res) {
   return new Promise(async (resolve) => {
     if (!await verifyRecaptcha(req.body['token'])) {
       res.statusCode = 403
       res.setHeader('Content-Type', 'application/json')
-      res.end(JSON.stringify({ success: false, message: "Google RECAPTCHA token could not be verified." }))
+      res.json({ success: false, message: "Google RECAPTCHA token could not be verified." })
       return resolve();
     }
 
@@ -53,12 +54,12 @@ export default async (req, res) => {
     sendPromise.then((data) => {
       console.log("Email sent. Message ID:", data.MessageId);
       res.statusCode = 200
-      res.end(JSON.stringify({ success: true, sesMessageId: data.MessageId }));
+      res.json({ success: true, url: req.url, sesMessageId: data.MessageId });
       return resolve();
     }).catch((err) => {
       console.error(err, err.stack);
       res.statusCode = 500
-      res.end(JSON.stringify({ success: false, message: err }))
+      res.json({ success: true, url: req.url, message: err });
       return resolve();
     });
   });
@@ -96,3 +97,5 @@ async function verifyRecaptcha(token) {
   });
   return verified;
 }
+
+module.exports = contact

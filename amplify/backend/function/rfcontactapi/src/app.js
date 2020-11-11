@@ -7,11 +7,10 @@ See the License for the specific language governing permissions and limitations 
 */
 
 
-
-
 var express = require('express')
 var bodyParser = require('body-parser')
 var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
+var contact = require('./contact')
 
 // declare a new express app
 var app = express()
@@ -25,19 +24,8 @@ app.use(function(req, res, next) {
   next()
 });
 
-
-/****************************
-* Example post method *
-****************************/
-
 app.post('/api/contact', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-app.post('/api/contact/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
+  return contact(req, res);
 });
 
 app.listen(3000, function() {

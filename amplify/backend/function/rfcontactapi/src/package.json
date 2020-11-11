@@ -1,17 +1,20 @@
 {
-  "name": "RFContactApi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "aws-serverless-express": "^3.3.5",
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+    "name": "RFContactApi",
+    "repository": "github:kmcarter/redflannel-web",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "dependencies": {
+        "aws-sdk": "^2.789.0",
+        "aws-serverless-express": "^3.3.5",
+        "body-parser": "^1.17.1",
+        "express": "^4.15.2",
+        "node-fetch": "^2.6.1"
+    },
+    "devDependencies": {},
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
 }
