@@ -22,7 +22,7 @@ export default function Services() {
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
           <Blurb idx={2} icon={faComments} name="Consulting">
-            <Typography paragraph>Troubleshooting, research, design, and answering that fundamental, perennial question: "is it possible to...?"</Typography>
+            <Typography paragraph>Troubleshooting, research, design, and answering that fundamental, perennial question: "is this possible?"</Typography>
           </Blurb>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>

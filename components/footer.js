@@ -34,17 +34,17 @@ export default function Footer(props) {
           <Box py={2}>
             <Grid container spacing={2}>
               <Grid item xs={3} sm={2}>
-                <Link href="https://www.linkedin.com/in/kellycarterit/" className="icon alt">
+                <Link href="https://www.linkedin.com/in/kellycarterit/" className="icon alt" target="_blank">
                   <FontAwesomeIcon icon={faLinkedinIn} fixedWidth />
                 </Link>
               </Grid>
               <Grid item xs={3} sm={2}>
-                <Link href="https://github.com/kmcarter" className="icon alt">
+                <Link href="https://github.com/kmcarter" className="icon alt" target="_blank">
                   <FontAwesomeIcon icon={faGithub} fixedWidth />
                 </Link>
               </Grid>
               <Grid item xs={3} sm={2}>
-                <Link href="https://twitter.com/kellycodes" className="icon alt">
+                <Link href="https://twitter.com/kellycodes" className="icon alt" target="_blank">
                   <FontAwesomeIcon icon={faTwitter} fixedWidth />
                 </Link>
               </Grid>

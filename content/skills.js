@@ -1,8 +1,5 @@
-import Typography from '@material-ui/core/Typography';
 import { faGem, faCloud, faCreditCard, faLowVision, faVial, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
 import { faPython, faMicrosoft, faShopify, faReact, faAws, faHtml5, faModx, faWordpress } from '@fortawesome/free-brands-svg-icons';
-
-import Link from "../components/link";
 
 const skills = [{
   title: "Languages & frameworks",
@@ -68,7 +65,7 @@ const skills = [{
       icon: faVial,
     },
     {
-      name: "Web accessibility (a11y)",
+      name: "Web accessibility",
       icon: faLowVision,
     },
     {
