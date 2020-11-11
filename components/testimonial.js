@@ -24,7 +24,7 @@ export default function Testimonial(props) {
         <Typography component="blockquote" variant="body1">"{props.testimonial}"</Typography>
       </Grid>
       <Grid item xs={12} md={2} sm={4}>
-        <Avatar alt={props.name} src={props.image} className={classes.avatar} />
+        <Avatar alt={props.image ? props.name : ""} src={props.image} className={classes.avatar} />
       </Grid>
       <Grid item xs={12} md={3} sm={8}>
         <Typography paragraph>

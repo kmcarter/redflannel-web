@@ -12,7 +12,6 @@ const testimonials = [
     title: "President",
     company: "Mercom Capital Group",
     url: "https://www.mercomcapital.com/",
-    image: "/wendy.jpg",
     testimonial: "Having worked with several other programmers, Kelly is the only one that gives me the confidence that projects are being done right. They are efficient, detailed, and knowledgeable. They have always been able to deliver what I ask for, even if what I ask for is simply an “idea.” Kelly also lets you know if there is a better approach. I cannot recommend them enough."
   }
 ];
