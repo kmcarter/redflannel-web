@@ -11,5 +11,23 @@
       "StackId": "arn:aws:cloudformation:us-west-2:928655982265:stack/amplify-redflannelweb-dev-203447/8ef648b0-fbbc-11ea-8082-0aa8f5f15d4c",
       "AmplifyAppId": "d2954mxh0tdmyy"
     }
+  },
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-redflannelweb-prod-223740-authRole",
+      "UnauthRoleArn": "arn:aws:iam::928655982265:role/amplify-redflannelweb-prod-223740-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::928655982265:role/amplify-redflannelweb-prod-223740-authRole",
+      "Region": "us-west-2",
+      "DeploymentBucketName": "amplify-redflannelweb-prod-223740-deployment",
+      "UnauthRoleName": "amplify-redflannelweb-prod-223740-unauthRole",
+      "StackName": "amplify-redflannelweb-prod-223740",
+      "StackId": "arn:aws:cloudformation:us-west-2:928655982265:stack/amplify-redflannelweb-prod-223740/644d1450-23e8-11eb-b3d4-027dc42c1283",
+      "AmplifyAppId": "d2954mxh0tdmyy"
+    },
+    "categories": {
+      "function": {
+        "rfcontactapi": {}
+      }
+    }
   }
 }

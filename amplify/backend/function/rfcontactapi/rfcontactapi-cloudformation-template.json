@@ -68,7 +68,7 @@
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-redflannelweb-dev-203447-deployment",
+          "S3Bucket": "amplify-redflannelweb-prod-223740-deployment",
           "S3Key": "amplify-builds/rfcontactapi-5664454457437633382b-build.zip"
         }
       }

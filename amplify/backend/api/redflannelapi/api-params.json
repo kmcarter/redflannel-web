@@ -5,8 +5,7 @@
             "lambdaFunction": "rfcontactapi",
             "privacy": {
                 "open": true
-            },
-            "policyResourceName": "/api/contact"
+            }
         }
     ],
     "resourceName": "redflannelapi",
@@ -19,8 +18,8 @@
     "privacy": {
         "auth": 0,
         "unauth": 0,
-        "authRoleName": "amplify-redflannelweb-dev-203447-authRole",
-        "unAuthRoleName": "amplify-redflannelweb-dev-203447-unauthRole"
+        "authRoleName": "amplify-redflannelweb-prod-223740-authRole",
+        "unAuthRoleName": "amplify-redflannelweb-prod-223740-unauthRole"
     },
     "dependsOn": [
         {
@@ -31,5 +30,6 @@
                 "Arn"
             ]
         }
-    ]
+    ],
+    "uuid": "adaa12dc"
 }
