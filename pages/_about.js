@@ -1,4 +1,4 @@
-import { Avatar, Grid, Typography } from '@material-ui/core';
+import { Avatar, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import Link from "../components/link";
@@ -12,8 +12,13 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     padding: theme.spacing(1),
     margin: "0 0 1rem 1.5rem",
-    float: "right"
-  },
+    float: "right",
+    [theme.breakpoints.down("xs")]: {
+      maxWidth: "100%",
+      margin: "0 0 1rem",
+      float: "none"
+    }
+  }
 }));
 
 export default function About() {
@@ -22,7 +27,7 @@ export default function About() {
     <Section id="about">
       <SectionHeader>About Kelly</SectionHeader>
           <Typography paragraph>
-            <Avatar component="span" src="/kelly.jpg" alt="Kelly Carter" className={classes.avatar} />
+            <Avatar component="span" src="/kelly.jpg" alt="Kelly" className={classes.avatar} />
             Hi, I'm Kelly, the developer behind Red Flannel. I specialize in web application development, but I am a versatile software engineer. With over a decade of  practical work experience, I focus on building high-quality solutions with an appreciation for detail and craftsmanship often missing in the freelance industry.
           </Typography>
           <Typography paragraph>I particularly enjoy building in C#, React, and Python for projects, organizations, or individuals that are focused on doing social good or deemphasize profit as their singular goal. I am committed to good communication, honesty, and successful project completion. I use <Link href="https://deconforming.com/they-them-pronouns/" target="_blank" rel="noopener">they/them/their pronouns</Link>.</Typography>
