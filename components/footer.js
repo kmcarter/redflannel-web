@@ -1,13 +1,27 @@
 import { Typography, Grid, Box } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
+import { makeStyles } from '@material-ui/core/styles';
 
 import Link from "./link";
 
+const useStyles = makeStyles((theme) => ({
+  footer: {
+    padding: theme.spacing(12),
+    [theme.breakpoints.down("md")]: {
+      padding: theme.spacing(6),
+    }
+  },
+  footerLogo: {
+    maxWidth: "100%"
+  }
+}));
+
 export default function Footer(props) {
+  const classes = useStyles();
   const year = new Date().getFullYear();
   return (
-    <Box id="footer" component="footer" color="secondary.contrastText" padding={12}>
+    <Box id="footer" component="footer" color="secondary.contrastText" className={classes.footer}>
       <Grid container spacing={10}>
         <Grid item xs={12} md={6} component="section">
           <Typography component="h2" variant="h4" color="textSecondary" gutterBottom>The fineprint</Typography>
@@ -39,7 +53,7 @@ export default function Footer(props) {
         </Grid>
         <Grid item xs={12}>
           <Typography paragraph className="copyright" align="center">
-            <img src="/RF_logo_footer.png" alt="Red Flannel Web Services" />
+            <img src="/RF_logo_footer.png" alt="Red Flannel Web Services" className={classes.footerLogo} />
           </Typography>
           <Typography paragraph variant="caption" className="copyright" align="center">
             &copy; {year} &bull; <Link href="/privacy" color="inherit">Privacy Policy</Link>

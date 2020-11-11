@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@material-ui/core";
-import { faCode, faLaptopCode, faUsers, faComments, faExclamationTriangle } from "@fortawesome/free-solid-svg-icons";
+import { faCode, faLaptopCode, faUsers, faComments } from "@fortawesome/free-solid-svg-icons";
 
 import Section from "../components/section";
 import SectionHeader from "../components/section-header";
@@ -16,7 +16,7 @@ export default function Services() {
           </Blurb>
         </Grid>
         <Grid item xs={12} md={6} lg={3}>
-          <Blurb idx={1} icon={faLaptopCode} name="Website build">
+          <Blurb idx={1} icon={faLaptopCode} name="Website builds">
             <Typography paragraph>Whether you need a refresh or are jumpstarting a new brand, I can build custom or templated websites of all kinds on a variety of platforms.</Typography>
           </Blurb>
         </Grid>
