@@ -1,5 +1,5 @@
-import { faGem, faCloud, faCreditCard, faLowVision, faVial, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
-import { faPython, faMicrosoft, faShopify, faReact, faAws, faHtml5, faModx, faWordpress } from '@fortawesome/free-brands-svg-icons';
+import { faGem, faCloud, faLowVision, faVial, faCodeBranch } from '@fortawesome/free-solid-svg-icons';
+import { faPython, faMicrosoft, faShopify, faReact, faAws, faDigitalOcean  } from '@fortawesome/free-brands-svg-icons';
 
 const skills = [{
   title: "Languages & frameworks",
@@ -9,20 +9,16 @@ const skills = [{
       icon: faPython,
     },
     {
-      name: "JavaScript & React",
-      icon: faReact,
+      name: "Jamstack (Next.js & Gatsby)",
+      icon: faReact
     },
     {
       name: "C# & .NET Core",
       icon: faMicrosoft,
     },
     {
-      name: "Ruby on Rails",
+      name: "Ruby & Rails",
       icon: faGem,
-    },
-    {
-      name: "HTML5 & CSS3",
-      icon: faHtml5,
     },
   ]
 }, {
@@ -41,12 +37,8 @@ const skills = [{
       icon: faShopify,
     },
     {
-      name: "MODX",
-      icon: faModx,
-    },
-    {
-      name: "WordPress",
-      icon: faWordpress,
+      name: "DigitalOcean",
+      icon: faDigitalOcean,
     },
   ]
 }, {
@@ -67,10 +59,6 @@ const skills = [{
     {
       name: "Web accessibility",
       icon: faLowVision,
-    },
-    {
-      name: "PCI Compliance",
-      icon: faCreditCard,
     },
   ]
 }
