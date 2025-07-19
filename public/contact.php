@@ -1,17 +1,27 @@
 <?php
 
 function verifyRecaptcha($token) {
-    $secret = getenv('GOOGLE_RECAPTCHA_SECRET_KEY');
-    $minimum_score = floatval(getenv('GOOGLE_RECAPTCHA_MINIMUM_SCORE'));
+    if (empty($token)) {
+        error_log("Google RECAPTCHA token is empty");
+        return false;
+    }
+    $api_key = 'AIzaSyDioCTXvVHhsOgwuWXcKSDtvxI_enP4uWg';
+    $site_key = '6Lf4mIcrAAAAAFh3tTXPRlVdwwWTVYggGjQ6J_ar';
+    $minimum_score = 0.7;
 
-    $post_data = http_build_query([
-        'secret' => $secret,
-        'response' => $token
-    ]);
+    $post_data = array(
+      'event' => array(
+          'siteKey' => $site_key,
+          'token' => $token,
+      )
+    );
 
-    $ch = curl_init('https://www.google.com/recaptcha/api/siteverify');
+    $ch = curl_init('https://recaptchaenterprise.googleapis.com/v1/projects/rainworks-86/assessments?key=' . $api_key);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $post_data);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($post_data)); // Send as JSON
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json'
+    ));
     curl_setopt($ch, CURLOPT_POST, true);
 
     $response = curl_exec($ch);
@@ -23,14 +33,18 @@ function verifyRecaptcha($token) {
     }
 
     $content = json_decode($response, true);
-    if ($content['success']) {
-        if (floatval($content['score']) >= $minimum_score) {
+    if (key_exists('error', $content)) {
+        error_log("Google RECAPTCHA returned an error: " . json_encode($response['error']));
+        return false;
+    } else if ($content['tokenProperties']['valid'] ?? false) {
+        if (floatval($content['riskAnalysis']['score']) >= $minimum_score) {
             return true;
         } else {
-            error_log("RECAPTCHA score of {$content['score']} did not meet minimum of $minimum_score");
+            error_log("RECAPTCHA score of {$content['riskAnalysis']['score']} did not meet minimum of $minimum_score");
         }
     } else {
-        error_log("Google RECAPTCHA returned a failure: " . json_encode($content['error-codes']));
+        error_log("Google RECAPTCHA returned a failure: " . json_encode($content['tokenProperties']['invalidReason']));
+        error_log("Google Response: " . json_encode($content));
     }
     return false;
 }

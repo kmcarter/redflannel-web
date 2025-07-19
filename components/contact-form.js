@@ -46,7 +46,7 @@ export default function ContactForm(props) {
       return res.json();
     }).then(content => {
       if (content.success) {
-        console.log("Email sent. Message ID:", content.sesMessageId);
+        console.log("Email sent successfully! ;)");
         setState({sending: false, open: true, success: true, message: "Thanks for reaching out! You'll hear from me soon.", name: "", email: "", projDesc: ""});
       } else {
         throw new Error(content.message);
