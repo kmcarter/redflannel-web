@@ -30,7 +30,7 @@ export default function ContactForm(props) {
       return;
     }
 
-    fetch(`${process.env.NEXT_PUBLIC_RF_BASE_API}/api/contact`, {
+    fetch(`contact.php`, {
       method: "post",
       headers: {
         "Accept": "application/json",

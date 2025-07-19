@@ -24,7 +24,7 @@ export default function PrivacyPage() {
             <Typography component="li"><Link href="https://html5up.net/stellar" target="_blank" rel="noopener">Stellar</Link>, a free HTML5 template by <Link href="https://html5up.net/" target="_blank" rel="noopener">HTML5Up</Link></Typography>
             <Typography component="li"><Link href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</Link> icons</Typography>
             <Typography component="li"><Link href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual Studio Code</Link></Typography>
-            <Typography component="li"><Link href="https://aws.amazon.com/" target="_blank" rel="noopener">Amazon Web Services</Link>, including: SES, Amplify</Typography>
+            <Typography component="li">Hosted on <Link href="https://dreamhost.com/" target="_blank" rel="noopener">DreamHost</Link></Typography>
             <Typography component="li"><Link href="https://www.google.com/recaptcha/" target="_blank" rel="noopener">Google RECAPTCHA</Link> (v3)</Typography>
             <Typography component="li">Privacy Policy created with <Link href="https://getterms.io/" target="_blank" rel="noopener">GetTerms</Link></Typography>
             </Typography>
