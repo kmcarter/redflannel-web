@@ -1,6 +1,6 @@
 import { Typography, Grid, Box } from "@material-ui/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter, faGithub, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faLinkedinIn, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { makeStyles } from '@material-ui/core/styles';
 
 import Link from "./link";
@@ -46,11 +46,6 @@ export default function Footer(props) {
               <Grid item xs={3} sm={2}>
                 <Link href="https://www.instagram.com/catakellysm/" className="icon alt" target="_blank">
                   <FontAwesomeIcon icon={faInstagram} fixedWidth />
-                </Link>
-              </Grid>
-              <Grid item xs={3} sm={2}>
-                <Link href="https://twitter.com/kellycodes" className="icon alt" target="_blank">
-                  <FontAwesomeIcon icon={faTwitter} fixedWidth />
                 </Link>
               </Grid>
             </Grid>
