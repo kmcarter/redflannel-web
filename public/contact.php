@@ -1,11 +1,18 @@
 <?php
 
+require_once __DIR__ . '/../PHPMailer/src/Exception.php';
+require_once __DIR__ . '/../PHPMailer/src/PHPMailer.php';
+require_once __DIR__ . '/../PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 function verifyRecaptcha($token) {
     if (empty($token)) {
         error_log("Google RECAPTCHA token is empty");
         return false;
     }
-    $api_key = 'AIzaSyDioCTXvVHhsOgwuWXcKSDtvxI_enP4uWg';
+    $api_key = getenv('GOOGLE_RECAPTCHA_API_KEY');
     $site_key = '6Lf4mIcrAAAAAFh3tTXPRlVdwwWTVYggGjQ6J_ar';
     $minimum_score = 0.7;
 
@@ -72,18 +79,32 @@ function contact() {
         <dt>Project description</dt><dd>{$projDesc}</dd>
     </dl></body></html>";
 
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "Content-type: text/html; charset=UTF-8\r\n";
-    $headers .= "From: Red Flannel Admin <admin@redflannel.co>\r\n";
-    $headers .= "Reply-To: {$email}\r\n";
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();
+        $mail->Host = getenv("BREVO_SMTP_HOST");
+        $mail->SMTPAuth = true;
+        $mail->Username = getenv("BREVO_SMTP_USER");
+        $mail->Password = getenv("BREVO_SMTP_KEY");
+        $mail->SMTPSecure = 'tls'; // or 'ssl' if required
+        $mail->Port = 587; // 465 for SSL, 587 for TLS
 
-    // For real SMTP, use PHPMailer or similar. This uses PHP's mail().
-    if (mail($to, $subject, $message, $headers)) {
+        $mail->setFrom('admin@redflannel.co', 'Red Flannel Admin');
+        $mail->addAddress($to);
+        $mail->addReplyTo($email);
+
+        $mail->isHTML(true);
+        $mail->Subject = $subject;
+        $mail->Body    = $message;
+        $mail->AltBody = strip_tags($message);
+
+        $mail->send();
         http_response_code(200);
         echo json_encode(['success' => true]);
-    } else {
+    } catch (Exception $e) {
         http_response_code(500);
-        echo json_encode(['success' => false, 'message' => 'Failed to send email.']);
+        error_log("Contact form submission failure: " . $mail->ErrorInfo);
+        echo json_encode(['success' => false, 'message' => 'Failed to send email: ' . $mail->ErrorInfo]);
     }
 }
 
